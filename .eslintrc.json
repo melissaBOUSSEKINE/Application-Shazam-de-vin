@@ -42,6 +42,15 @@
       "files": ["*.html"],
       "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
-    }
+    },
+    {
+      "parserOptions": {
+          "ecmaVersion": "latest"
+      },
+
+      "env": {
+          "es6": true
+      }
+  }
   ]
 }

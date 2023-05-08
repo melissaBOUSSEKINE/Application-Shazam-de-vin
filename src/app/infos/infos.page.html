@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Informations Sur Le Boisson </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card >
+    <img src="{{ logo }}" />
+
+
+    <ion-card-header>
+      <ion-card-title>{{ name }}</ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-list lines="full">
+
+        <ion-item>
+          <ion-label> Type : {{ categorie }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Ville d’origine : {{ provenance }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Slogan : {{ message_sanitaire }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Société : {{ embouteilleur }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Degré d'alcool : {{ tava }} %</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Couleur : {{ couleur }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Volume : {{ volume }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-button expand="full" (click)="addnotes()" fill="outline">
+    <ion-icon name="add-circle-outline"></ion-icon> Ajouter Votre Note
+  </ion-button>
+
+
+  <ion-card >
+
+    <ion-card-header>
+      <ion-card-title>Commentaires :</ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+
+      <ion-list lines="full" *ngFor="let item of commentaires" >
+
+
+
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="{{ item.photo }}" />
+          </ion-thumbnail>
+          <ion-label> Username : {{ item.username }}</ion-label>
+
+          <ion-label> Note : {{ item.note }} / 10 </ion-label>
+          <ion-label> Commentaire : {{ item.commentaire }} </ion-label>        </ion-item>
+
+      </ion-list>
+
+
+
+
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+
+
+
+
+
+
+  <ion-button expand="full" (click)="retour()" fill="outline">
+    <ion-icon name="arrow-back-outline"></ion-icon>  Retour au Home
+
+  </ion-button>
+
+
+</ion-content>
